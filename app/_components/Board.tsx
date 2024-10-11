@@ -21,7 +21,7 @@ const Board = ({
         <div className="absolute flex items-center justify-center w-full h-full">
           <div className="w-full h-full bg-black opacity-50"></div>
           <div className="absolute flex flex-col gap-6 items-center justify-center w-1/5 h-1/2 bg-white border border-black">
-            {session.turn === -1 ? <Cross1Icon /> : <CircleIcon />} WON!
+            {session.turn === -1 ? <Cross1Icon /> : <CircleIcon />} Won.
             <button
               onClick={session.reset}
               className="border px-6 py-2 bg-red-400 border-red-700"
@@ -40,6 +40,7 @@ const Board = ({
                   onClick={() => {
                     session.play({ x: x, y: y });
                   }}
+                  key={`${x}${y}`}
                   className="w-[10vw] aspect-square border grid place-items-center"
                 >
                   {val &&
@@ -62,7 +63,10 @@ const Board = ({
           Reset
         </button>
         <button
-          onClick={() => setStart(false)}
+          onClick={() => {
+            setStart(false);
+            session.reset();
+          }}
           className="border px-6 py-2 bg-red-400 border-red-700"
         >
           Exit

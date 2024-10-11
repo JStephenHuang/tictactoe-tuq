@@ -11,7 +11,7 @@ export default function Home() {
   );
 
   return (
-    <div className="h-screen flex flex-col">
+    <div className="h-screen flex flex-col items-center">
       {start ? (
         <Board setStart={setStart} />
       ) : (
@@ -28,6 +28,15 @@ export default function Home() {
           </button>
         </div>
       )}
+      <div className="">made by stephen :)</div>
+      <div className="pb-10">
+        <a
+          className="hover:underline"
+          href="https://github.com/JStephenHuang/tictactoe-tuq"
+        >
+          Source code
+        </a>
+      </div>
     </div>
   );
 }
