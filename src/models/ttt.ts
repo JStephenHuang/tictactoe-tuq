@@ -1,7 +1,7 @@
 // blueprint
 
 function isWin(boardHashMap: Map<string, number>) {
-  for (const [key, value] of boardHashMap) {
+  for (const value of boardHashMap.values()) {
     if (value === 3) {
       return true;
     }

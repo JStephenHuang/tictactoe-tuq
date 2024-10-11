@@ -4,7 +4,7 @@ import { createContext, useContext, useState } from "react";
 import { Session } from "@/src/models/ttt";
 
 function checkWin(boardHashMap: Map<string, number>) {
-  for (const [key, value] of boardHashMap) {
+  for (const value of boardHashMap.values()) {
     if (value === 3 || value === -3) {
       return true;
     }
