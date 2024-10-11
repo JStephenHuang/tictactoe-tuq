@@ -37,10 +37,10 @@ const Board = ({
             {session.board.map((rows, y) =>
               rows.map((val, x) => (
                 <div
+                  key={`${x}${y}`}
                   onClick={() => {
                     session.play({ x: x, y: y });
                   }}
-                  key={`${x}${y}`}
                   className="w-[10vw] aspect-square border grid place-items-center"
                 >
                   {val &&
