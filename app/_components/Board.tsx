@@ -12,15 +12,15 @@ const Board = ({
   const session = useTicTacToe();
 
   return (
-    <div className="relative h-full flex flex-col gap-20 items-center justify-center">
+    <div className="h-full flex flex-col gap-10 items-center justify-center">
       <div className="flex items-center gap-5 font-bold">
         Player&apos; turn:
         {session.turn === -1 ? <Cross1Icon /> : <CircleIcon />}
       </div>
       {session.isWin && (
-        <div className="absolute flex items-center justify-center w-full h-full">
+        <div className="absolute flex items-center justify-center w-screen h-screen">
           <div className="w-full h-full bg-black opacity-50"></div>
-          <div className="absolute flex flex-col gap-6 items-center justify-center w-1/5 h-1/2 bg-white border border-black">
+          <div className="absolute flex flex-col gap-6 items-center justify-center w-[40vw] h-1/2 bg-white border border-black">
             {session.turn === -1 ? <Cross1Icon /> : <CircleIcon />} Won.
             <button
               onClick={session.reset}
